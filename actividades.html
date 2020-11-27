@@ -45,7 +45,7 @@
             </ul>
         </nav>
 
-        <!-- inferior en header -->
+        <!-- bottom en header -->
         <div>
             <h2>Proximas actividades</h2>
             <!-- poner tabla aqui (4 columnas y 4 filas maso) -->
@@ -54,7 +54,7 @@
                 <thead>
                     <th>Data 1</th>
                     <th>Data 2</th>
-                    <th>Data 2</th>
+                    <th>Data 3</th>
                 </thead>
                 <!-- cuerpo -->
                 <tbody>
@@ -62,6 +62,16 @@
                         <td>Calcutta</td>
                         <td>Orange</td>
                         <td>Orange</td>
+                    </tr>
+                    <tr>
+                        <td>Robots</td>
+                        <td>Jazz</td>
+                        <td>Jazz</td>
+                    </tr>
+                    <tr>
+                        <td>Robots</td>
+                        <td>Jazz</td>
+                        <td>Jazz</td>
                     </tr>
                     <tr>
                         <td>Robots</td>
@@ -174,9 +184,9 @@
 
             <!-- paginacion -->
             <ul class="flex flex--justify-center">
-                <li>1(seleccionado)/</li>
-                <li>2/</li>
-                <li>3</li>
+                <li class="active"><a href="#">1/</a></li>
+                <li><a href="#">2/</a></li>
+                <li><a href="#">3</a></li>
             </ul>
         </section>
 
@@ -184,37 +194,36 @@
         <section class="section2-actividades">
             <h3>Recomendaciones sobre cuidados</h3>
             <!-- flex con justify content center -->
-            <div>
+            <div class="flex--justify-space-around flex-1">
                 <article>
-                    <figure><img src="" alt=""></figure>
+                    <figure><img src="img/zonas.jpg" alt="pepe"></figure>
+                    <h3>Cuidado 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim, inventore sint,
+                        quaerat quis magni, dolor nemo blanditiis eius illo suscipit sit sapiente voluptates repellendu!</p>
+                </article>
+                <article>
+                    <figure><img src="img/zonas.jpg" alt="pepe"></figure>
                     <h3>Cuidado 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim, inventore sint,
                         quaerat quis magni, dolor nemo blanditiis eius illo suscipit sit sapiente voluptates repellendus
                         nesciunt nam eaque quas corrupti.</p>
                 </article>
                 <article>
-                    <figure><img src="" alt=""></figure>
+                    <figure><img src="img/zonas.jpg" alt="pepe"></figure>
                     <h3>Cuidado 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim, inventore sint,
                         quaerat quis magni, dolor nemo blanditiis eius illo suscipit sit sapiente voluptates repellendus
                         nesciunt nam eaque quas corrupti.</p>
                 </article>
                 <article>
-                    <figure><img src="" alt=""></figure>
+                    <figure><img src="img/zonas.jpg" alt="pepe"></figure>
                     <h3>Cuidado 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim, inventore sint,
                         quaerat quis magni, dolor nemo blanditiis eius illo suscipit sit sapiente voluptates repellendus
                         nesciunt nam eaque quas corrupti.</p>
                 </article>
                 <article>
-                    <figure><img src="" alt=""></figure>
-                    <h3>Cuidado 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim, inventore sint,
-                        quaerat quis magni, dolor nemo blanditiis eius illo suscipit sit sapiente voluptates repellendus
-                        nesciunt nam eaque quas corrupti.</p>
-                </article>
-                <article>
-                    <figure><img src="" alt=""></figure>
+                    <figure><img src="img/zonas.jpg" alt="pepe"></figure>
                     <h3>Cuidado 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit enim, inventore sint,
                         quaerat quis magni, dolor nemo blanditiis eius illo suscipit sit sapiente voluptates repellendus
@@ -224,11 +233,11 @@
         </section>
     </main>
     <footer>
-        <ul>
+        <ul class="flex--align-items-center flex--justify-center">
             <li>Seguinos</li>
-            <li>instagram</li>
-            <li>twitter</li>
-            <li>facebook</li>
+            <li><a href="#"><i class="fab fa-instagram-square fa-2x"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
         </ul>
     </footer>
     <script src="js/script.js"></script>

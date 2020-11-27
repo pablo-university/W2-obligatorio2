@@ -112,7 +112,7 @@ hr {
 
 /* ----------- MIS BIBLIOTECAS ------------- */
 /* Mi biblioteca flex con BEM */
-.flex, .flex--direction-column, .flex--align-content-center, .flex--align-items-center, .flex--justify-center, .flex--justify-space-between {
+.flex, .flex--direction-column, .flex--align-content-center, .flex--align-items-center, .flex--justify-center, .flex--justify-space-around, .flex--justify-space-between {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -120,6 +120,9 @@ hr {
 }
 .flex--justify-space-between {
   justify-content: space-between;
+}
+.flex--justify-space-around {
+  justify-content: space-around;
 }
 .flex--justify-center {
   justify-content: center;
@@ -143,7 +146,6 @@ hr {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-  grid-auto-rows: 12rem;
   grid-auto-flow: row dense;
 }
 
@@ -299,28 +301,30 @@ https://sass-lang.com/documentation/at-rules/control/for */
 }
 
 /* Mi biblioteca MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 100vh;
-  display: none;
-}
-.modal > * {
-  margin: 3rem auto;
-  max-height: 80vh;
-  width: 50vw;
-  padding: 3rem;
-  overflow-y: overlay;
-  position: relative;
-}
-.modal [class*=far] {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-}
+/* .modal {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
 
+    display: none;
+
+    & > * {
+        margin: 3rem auto;
+        max-height: 80vh;
+        width: 50vw;
+        padding: 3rem;
+        overflow-y: overlay;
+        position: relative;
+    }
+
+    & [class*="far"] {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+} */
 /* FORMULARIO GENERAL */
 label {
   /* predefinido son inline */
@@ -516,6 +520,25 @@ header div:last-child .boton {
   }
 }
 
+.header-actividades table {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-actividades table {
+    display: table;
+  }
+  .header-actividades th:last-child,
+.header-actividades td:last-child {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .header-actividades th:last-child,
+.header-actividades td:last-child {
+    display: table-cell;
+  }
+}
+
 /* --- MAIN INDEX --- */
 .section1-index {
   background-color: lightblue;
@@ -613,4 +636,31 @@ header div:last-child .boton {
 /* --- MAIN ACTIVIDADES --- */
 .section1-actividades img {
   height: 100%;
+}
+
+.section2-actividades article p {
+  display: none;
+}
+.section2-actividades > div > * {
+  flex: 0 40%;
+}
+@media screen and (min-width: 576px) {
+  .section2-actividades > div > * {
+    flex: 0 30%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section2-actividades article p {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section2-actividades > div > * {
+    flex: 1;
+  }
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: lightblue;
 }
