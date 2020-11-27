@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Inicio | Viaje Australia</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/kangaroo.svg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <!-- Material design -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- BIBLIOTECAS -->
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+    <header class="header-index">
+        <!-- nav principal -->
+        <nav>
+            <!-- hacer este contenedor
+                 grid e ir variando template
+                 o span de logo -->
+            <ul>
+                <li><a href="#"><img src="img/kangaroo.svg"
+                            alt="logo relacionado a al contenido web, viaje | turismo a Australia"></a></li>
+                <hr>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Alojamiento</a></li>
+                <li><a href="actividades.html">Actividades</a></li>
+                <hr>
+            </ul>
+        </nav>
+
+        <!-- inferior en header -->
+        <div class="flex flex--direction-column">
+            <h1>Titulo</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia incidunt necessitatibus ea modi omnis,
+                ratione aspernatur molestiae tempora ad dicta deserunt a minus suscipit earum quo rem ullam architecto
+                soluta!</p>
+            <a href="#" class="boton">VER MAS</a>
+        </div>
+    </header>
+    <main>
+        <!-- buscar Alojamiento -->
+        <section class="section1-index">
+            <h2>Buscar alojamiento</h2>
+            <form action="#" class="grid--place-items-center">
+                <!-- zona -->
+                <div class="b2-2 b3-1">
+                    <label for="zona">Zona</label>
+                    <!-- entrada -->
+                    <input list="z" name="zona" id="zona" placeholder="zona" pattern="[a-zA-Z\s]+" required>
+                    <!-- opciones -->
+                    <datalist id="z">
+                        <option value="Monte Cook">
+                        <option value="Hobbiton">
+                        <option value="Tongariro">
+                        <option value="Mildford Sound">
+                        <option value="Moeraki Boulders">
+                    </datalist>
+                </div>
+                <!-- llegada -->
+                <div class="b2-2 b3-1">
+                    <label for="llegada">llegada:</label>
+                    <input type="date" id="llegada" name="llegada" required>
+                </div>
+                <!-- salida -->
+                <div class="b2-2 b3-1">
+                    <label for="salida">salida:</label>
+                    <input type="date" id="salida" name="salida" required>
+                </div>
+                <!-- Huespedes -->
+                <div class="b2-2 b3-1">
+                    <label for="huespedes">Huespedes</label>
+                    <input type="number" name="huespedes" id="huespedes" pattern="[1-9]+" placeholder="nro huespedes"
+                        required>
+                </div>
+                <input class="boton b2-2 b3-2" type="submit" value="BUSCAR">
+            </form>
+        </section>
+
+        <!-- Zonas -->
+        <section class="section2-index">
+            <h2>Zonas</h2>
+            <!-- grid -->
+            <div class="grid">
+                <!-- article1 -->
+                <article class="b1-3 b4-2 flex flex-1">
+                    <figure><img src="img/zonas.jpg" alt="escribir descripcion">
+                        <figcaption>Zona 1</figcaption>
+                    </figure>
+                    <div class="flex--direction-column">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure!</p>
+                        <a href="#" class="boton">VER MAS</a>
+                    </div>
+                </article>
+                <!-- article2 -->
+                <article class="b1-3 b4-2 flex flex-1">
+                    <figure><img src="img/zonas.jpg" alt="escribir descripcion">
+                        <figcaption>Zona 1</figcaption>
+                    </figure>
+                    <div class="flex--direction-column">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure!</p>
+                        <a href="#" class="boton">VER MAS</a>
+                    </div>
+                </article>
+                <!-- article3 -->
+                <article class="b1-3 b4-2 flex flex-1">
+                    <figure><img src="img/zonas.jpg" alt="escribir descripcion">
+                        <figcaption>Zona 1</figcaption>
+                    </figure>
+                    <div class="flex--direction-column">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure!</p>
+                        <a href="#" class="boton">VER MAS</a>
+                    </div>
+                </article>
+                <!-- article4 -->
+                <article class="b1-3 b4-3 flex flex-1">
+                    <figure class=""><img src="img/zonas-2.jpg" alt="escribir descripcion">
+                        <figcaption>Zona 1</figcaption>
+                    </figure>
+                    <div class="flex--direction-column">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure!</p>
+                        <a href="#" class="boton">VER MAS</a>
+                    </div>
+                </article>
+                <!-- article5 -->
+                <article class="b1-3 b4-3 flex flex-1">
+                    <figure><img src="img/zonas-2.jpg" alt="escribir descripcion">
+                        <figcaption>Zona 1</figcaption>
+                    </figure>
+                    <div class="flex--direction-column">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure!</p>
+                        <a href="#" class="boton">VER MAS</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Destinos cercanos -->
+        <section class="section3-index">
+            <h2>Destinos cercanos</h2>
+            <!-- grid? -->
+            <div class="flex--justify-center flex-1">
+                <!-- article1 -->
+                <article>
+                    <figure><img src="img/zonas-2.jpg" alt="escribir aqui"></figure>
+                    <div>
+                        <h3>Destino</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure, ullam, quos beatae veritatis quae. Modi tenetur aut sit
+                            quam dolores laboriosam ratione delectus!</p>
+                        <!-- bottom article -->
+                        <div class="grid--align-items-center">
+                            <ul class="b1-3 flex">
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                            </ul>
+                            <a href="#" class="b1-3 boton">VER MAS</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- article2 -->
+                <article>
+                    <figure><img src="img/zonas-2.jpg" alt="escribir aqui"></figure>
+                    <div>
+                        <h3>Destino</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure, ullam, quos beatae veritatis quae. Modi tenetur aut sit
+                            quam dolores laboriosam ratione delectus!</p>
+                        <!-- bottom article -->
+                        <div class="grid--align-items-center">
+                            <ul class="b1-3 flex">
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                            </ul>
+                            <a href="#" class="b1-3 boton">VER MAS</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- article3 -->
+                <article>
+                    <figure><img src="img/zonas-2.jpg" alt="escribir aqui"></figure>
+                    <div>
+                        <h3>Destino</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eius quidem unde
+                            doloremque temporibus delectus iure, ullam, quos beatae veritatis quae. Modi tenetur aut sit
+                            quam dolores laboriosam ratione delectus!</p>
+                        <!-- bottom article -->
+                        <div class="grid--align-items-center">
+                            <ul class="b1-3 flex">
+                                <li><span class="material-icons">grade</span></li>
+                                <li><span class="material-icons">grade</span></li>
+                            </ul>
+                            <a href="#" class="b1-3 boton">VER MAS</a>
+                        </div>
+                    </div>
+                </article>
+            </div><!-- fin destinos div -->
+        </section>
+    </main>
+    <footer>
+        <ul class="flex--align-items-center flex--justify-center">
+            <li>Seguinos</li>
+            <li><a href="#"><i class="fab fa-instagram-square fa-2x"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+        </ul>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
