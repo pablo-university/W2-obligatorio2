@@ -609,21 +609,28 @@ header div:last-child .boton {
   }
 }
 
-.section3-index article {
-  background-color: lightpink;
-}
 .section3-index article:last-child {
   display: none;
 }
-.section3-index article p, .section3-index article ul li {
+.section3-index article p, .section3-index article ul {
   display: none;
 }
 .section3-index article .boton {
   margin-left: auto;
 }
+@media screen and (max-width: 575px) {
+  .section3-index article h3 {
+    grid-column: span 1;
+  }
+  .section3-index article a {
+    grid-column: span 5;
+  }
+}
 @media screen and (min-width: 576px) {
-  .section3-index article ul li {
-    display: inline;
+  .section3-index article ul {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 }
 @media screen and (min-width: 768px) {
@@ -692,4 +699,7 @@ header div:last-child .boton {
 /* --- FOOTER --- */
 footer {
   background-color: lightblue;
+}
+footer ul {
+  flex-wrap: nowrap;
 }
