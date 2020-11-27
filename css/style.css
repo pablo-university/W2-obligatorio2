@@ -8,7 +8,6 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   list-style: none;
-  user-select: none;
 }
 
 :root {
@@ -548,7 +547,7 @@ header div:last-child .boton {
 }
 @media screen and (min-width: 768px) {
   .section1-index form > div {
-    display: block;
+    display: inherit;
   }
   .section1-index form input[type=submit]:last-child {
     place-self: end end;
@@ -616,11 +615,16 @@ header div:last-child .boton {
 .section3-index article:last-child {
   display: none;
 }
-.section3-index article p {
+.section3-index article p, .section3-index article ul li {
   display: none;
 }
 .section3-index article .boton {
   margin-left: auto;
+}
+@media screen and (min-width: 576px) {
+  .section3-index article ul li {
+    display: inline;
+  }
 }
 @media screen and (min-width: 768px) {
   .section3-index article p {
@@ -636,6 +640,31 @@ header div:last-child .boton {
 /* --- MAIN ACTIVIDADES --- */
 .section1-actividades img {
   height: 100%;
+}
+.section1-actividades .boton {
+  margin: auto 0 0 auto;
+}
+.section1-actividades article > div :not(h3) {
+  display: none;
+}
+.section1-actividades figure {
+  flex-basis: 100%;
+}
+@media screen and (min-width: 576px) {
+  .section1-actividades article > div :not(p) {
+    display: inherit;
+  }
+  .section1-actividades article > div :not(p) li {
+    display: inline-flex;
+  }
+  .section1-actividades figure {
+    flex-basis: 10rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section1-actividades article > div > p {
+    display: block;
+  }
 }
 
 .section2-actividades article p {
