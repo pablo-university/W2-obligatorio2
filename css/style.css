@@ -16,7 +16,7 @@
   --color-fondo-card: white;
   --color-fuente: rgb(70, 70, 70);
   --color-link: seagreen;
-  --color-link-hover: rgb(97, 194, 139);
+  --color-link-hover: rgb(28, 112, 65);
   --color-tabla: #1a486121;
   --color-tabla-hover:lightseagreen;
   /* margen */
@@ -74,6 +74,10 @@ span[class*=material] {
   margin-bottom: 0;
   color: var(--color-fuente);
   transition: color 0.5s;
+}
+
+span[class^=material] {
+  font-size: 1.2rem;
 }
 
 /* Hover links con iconos */
@@ -500,8 +504,12 @@ header nav img {
 }
 
 /* --- HEADER GENERAL --- */
+header {
+  height: 100vh;
+  background-color: sandybrown;
+}
 header div:last-child {
-  margin-top: 40vh;
+  margin-top: auto;
 }
 header div:last-child .boton {
   margin-left: auto;
@@ -515,12 +523,16 @@ header div:last-child .boton {
 }
 @media screen and (min-width: 576px) {
   .header-index p {
-    display: inherit;
+    display: block;
+    columns: 15rem 2;
   }
 }
 
 .header-actividades table {
   display: none;
+}
+.header-actividades .boton {
+  align-self: flex-end;
 }
 @media screen and (min-width: 768px) {
   .header-actividades table {
@@ -555,7 +567,8 @@ header div:last-child .boton {
 }
 
 .section2-index {
-  padding: 4rem 5vw 2rem;
+  background: lightslategray;
+  padding: 4rem 1vw 2rem;
 }
 .section2-index img {
   height: 100%;
@@ -571,9 +584,9 @@ header div:last-child .boton {
   opacity: 0;
   text-align: center;
   width: 100%;
-  padding-top: 50vh;
+  padding-top: 70vh;
   padding-bottom: 1rem;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 .section2-index figure:hover figcaption {
   bottom: 0;
@@ -592,19 +605,16 @@ header div:last-child .boton {
     display: inherit;
   }
   .section2-index article:nth-child(1n) div {
-    background-color: yellowgreen;
     flex: 0;
   }
 }
 @media screen and (min-width: 992px) {
   .section2-index article:nth-child(1n) div {
-    background-color: yellowgreen;
     flex: 1 15rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .section2-index article:nth-child(1n) div {
-    background-color: yellowgreen;
     flex: 0;
   }
 }
@@ -612,7 +622,8 @@ header div:last-child .boton {
 .section3-index article:last-child {
   display: none;
 }
-.section3-index article p, .section3-index article ul {
+.section3-index article p,
+.section3-index article ul {
   display: none;
 }
 .section3-index article .boton {
@@ -698,7 +709,7 @@ header div:last-child .boton {
 
 /* --- FOOTER --- */
 footer {
-  background-color: lightblue;
+  background-color: sandybrown;
 }
 footer ul {
   flex-wrap: nowrap;
