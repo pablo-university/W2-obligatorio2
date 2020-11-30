@@ -39,18 +39,22 @@
 :root {
   /* colores */
   --color-fondo: rgb(46 69 89 / 3%);
+  /*     --color-fondo--secundario: peachpuff;
+  --color-fondo--secundario: seashell; */
+  --color-fondo--secundario: lightslategray;
   --color-fondo-card: white;
   --color-fuente: rgb(70, 70, 70);
-  --color-link: seagreen;
-  --color-link-hover: rgb(28, 112, 65);
+  --color-link: #005656;
+  --color-link--hover: #003636;
   --color-tabla: #1a486121;
-  --color-tabla-hover:lightseagreen;
+  --color-tabla--hover: #ffffff77;
   /* margen */
   --margen-fuente: 1rem;
   /* sombras */
   --shadow-black: 0 0 10px 0px #00000014;
-  --shadow-black-hover: 0 0 10px 0px #00000030;
-  --shadow-img: 0 0 5px 0px black;
+  --shadow-black--hover: 0 0 10px 0px #00000030;
+  --shadow-img: 0 0 20px 10px #0000001c;
+  --shadow-img--hover: 0 0 20px 10px #00000041;
 }
 
 /* --- SCROLL --- */
@@ -67,24 +71,29 @@ body::-webkit-scrollbar-thumb {
 
 /* Hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: var(--color-link-hover);
+  background: var(--color-link--hover);
 }
 
-/* --- */
+/* --------- */
+/* IMG */
 img {
   width: 100%;
   object-fit: cover;
   transition: filter 0.5s, box-shadow 0.5s;
 }
 
-img:hover {
+figure img {
+  box-shadow: var(--shadow-img);
+}
+figure img:hover {
   filter: hue-rotate(-30deg);
-  /* box-shadow: var(--shadow-img); */
+  box-shadow: var(--shadow-img--hover);
 }
 
 h1,
 h2,
 h3,
+h4,
 p,
 span {
   color: var(--color-fuente);
@@ -128,7 +137,7 @@ a {
 
 /* Hover Links */
 a:hover {
-  color: var(--color-link-hover);
+  color: var(--color-link--hover);
 }
 
 /* Lineas */
@@ -308,7 +317,7 @@ https://sass-lang.com/documentation/at-rules/control/for */
   /* hover */
 }
 .card > *:hover {
-  box-shadow: var(--shadow-black-hover);
+  box-shadow: var(--shadow-black--hover);
 }
 
 /* Mi biblioteca boton */
@@ -326,7 +335,7 @@ https://sass-lang.com/documentation/at-rules/control/for */
 }
 
 .boton:hover {
-  background-color: var(--color-link-hover) !important;
+  background-color: var(--color-link--hover) !important;
 }
 
 /* Mi biblioteca MODAL */
@@ -413,6 +422,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  color: var(--color-fuente);
   /* fuente responsiva */
   font-size: clamp(0.5rem, 2vw, 1rem);
 }
@@ -439,7 +449,7 @@ tr:nth-child(even) {
 }
 
 tbody tr:hover {
-  background: var(--color-tabla-hover);
+  background: var(--color-tabla--hover);
 }
 
 /* Modelo de caja¿? */
@@ -575,6 +585,9 @@ header div:last-child .boton {
 .header-actividades .boton {
   align-self: flex-end;
 }
+.header-actividades div:last-child {
+  opacity: 1;
+}
 @media screen and (min-width: 768px) {
   .header-actividades table {
     display: table;
@@ -696,11 +709,17 @@ header div:last-child .boton {
 }
 
 /* --- MAIN ACTIVIDADES --- */
+.section1-actividades {
+  background-color: lightslategray;
+}
 .section1-actividades img {
   height: 100%;
 }
 .section1-actividades .boton {
   margin: auto 0 0 auto;
+}
+.section1-actividades > div {
+  margin-bottom: 4rem;
 }
 .section1-actividades article > div :not(h3) {
   display: none;
