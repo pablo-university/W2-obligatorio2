@@ -18,9 +18,10 @@ pepe.addEventListener('wheel',
     function (e) {
         console.log(e.deltaY,e.deltaY > 0,document.querySelector("header div:last-child"))
         if (e.deltaY > 0){
-            // mi target
+            // si quiero bajar muestro bottom y oculto 
             document.querySelector("header div:last-child").style.opacity = '1';
         }else{
+            // sino quito mostrar bottom
             document.querySelector("header div:last-child").removeAttribute('style');
         }
     });

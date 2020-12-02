@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
 @keyframes snippet {
   from {
     transform: rotate(0deg);
@@ -34,6 +35,7 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   list-style: none;
+  word-wrap: break-word;
 }
 
 :root {
@@ -466,6 +468,10 @@ footer {
   padding: 4rem 1vw 2rem;
 }
 
+footer {
+  padding: 0 0 2rem;
+}
+
 /* --- MENU --- */
 header nav {
   /*     @media screen and (min-width: 768px) {
@@ -541,13 +547,26 @@ header nav img {
 
 /* --- HEADER GENERAL --- */
 header {
-  height: 100vh;
+  min-height: 100vh;
   background-color: sandybrown;
+  background-image: url(../img/portada.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   /* puse estas reglas asi ya que no me tomaba ni el shortland basico */
+}
+header h1 {
+  position: absolute;
+  top: 36%;
+  align-self: center;
+  opacity: 1;
+  max-width: 12rem;
+  line-height: 3rem;
+  text-align: center;
+  font-family: "Neucha", cursive;
+  font-size: 3rem;
+  font-weight: 700;
 }
 header div:last-child {
   margin-top: auto;
@@ -579,6 +598,9 @@ header div:last-child .boton {
   }
 }
 
+.header-actividades {
+  padding-bottom: 0;
+}
 .header-actividades table {
   display: none;
 }
@@ -633,16 +655,21 @@ header div:last-child .boton {
 .section2-index figure figcaption {
   color: whitesmoke;
   position: absolute;
-  bottom: -100%;
+  bottom: 0;
   opacity: 0;
   text-align: center;
   width: 100%;
-  padding-top: 70vh;
-  padding-bottom: 1rem;
+  height: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: all 0.5s;
 }
+.section2-index figure figcaption h3 {
+  color: #ffffffd8;
+}
 .section2-index figure:hover figcaption {
-  bottom: 0;
+  height: 100%;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.315);
 }
@@ -769,10 +796,29 @@ header div:last-child .boton {
   }
 }
 
+.section3-actividades {
+  background-color: var(--color-fondo--secundario);
+}
+.section3-actividades iframe {
+  min-height: 45vh;
+  width: 100%;
+  border: none;
+}
+.section3-actividades > div > * {
+  flex: 1 30rem;
+}
+
 /* --- FOOTER --- */
 footer {
   background-color: sandybrown;
 }
+footer iframe {
+  width: 100%;
+  max-height: 50vh;
+  border: none;
+  mix-blend-mode: luminosity;
+}
 footer ul {
+  padding: 2rem 0 1rem;
   flex-wrap: nowrap;
 }
