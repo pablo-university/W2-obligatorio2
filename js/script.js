@@ -16,16 +16,20 @@ ScrollReveal().reveal('section >*, footer >*', {
 let pepe = document.querySelector("header");
 pepe.addEventListener('wheel',
     function (e) {
-        console.log(e.deltaY,e.deltaY > 0,document.querySelector("header div:last-child"))
-        if (e.deltaY > 0){
+        // console.log(e.deltaY,e.deltaY > 0,document.querySelector("header div:last-child"))
+        if (e.deltaY > 0) {
             // si quiero bajar muestro bottom y oculto 
             document.querySelector("header div:last-child").style.opacity = '1';
-        }else{
+        } else {
             // sino quito mostrar bottom
             document.querySelector("header div:last-child").removeAttribute('style');
         }
     });
 
-// importo el modulo que maneja amburguesa
-import {burguerMenu} from './burguerMenu.mjs';
-burguerMenu();
+// maneja amburguesa
+document.querySelector('#burguer-menu').addEventListener('click', activaMenu);
+
+function activaMenu(e) {
+    this.classList.toggle('active');
+    document.querySelector('#burguer-menu-target').classList.toggle('active');
+}
