@@ -27,6 +27,47 @@
   fill: slategray;
 }
 
+#burguer-menu {
+  overflow: visible;
+}
+#burguer-menu rect {
+  transition: all 1s;
+}
+#burguer-menu.active rect:first-child {
+  transform: rotateZ(45deg) translateY(33px);
+  transform-origin: center;
+}
+#burguer-menu.active rect:nth-child(2) {
+  display: none;
+}
+#burguer-menu.active rect:last-child {
+  transform: rotateZ(-45deg) translateY(-30px);
+  transform-origin: center;
+}
+@media screen and (min-width: 576px) {
+  #burguer-menu {
+    display: none;
+  }
+}
+
+#burguer-menu-target {
+  display: none;
+  transition: display 1s;
+}
+@media screen and (min-width: 576px) {
+  #burguer-menu-target {
+    display: block;
+  }
+}
+
+#burguer-menu-target.active {
+  display: block;
+}
+#burguer-menu-target.active + * {
+  top: 50%;
+  margin-top: auto;
+}
+
 /* ----------- GLOBALES ------------- */
 * {
   margin: 0;
@@ -513,7 +554,7 @@ header nav img {
 }
 
 /* active */
-.active {
+li.active {
   pointer-events: none;
 }
 
@@ -535,7 +576,7 @@ header nav img {
     margin: 0 0 0 auto;
   }
 }
-.active::after {
+li.active::after {
   content: "";
   display: block;
   margin: auto;
@@ -558,18 +599,25 @@ header {
 }
 header h1 {
   position: absolute;
-  top: 36%;
+  top: 38%;
   align-self: center;
   opacity: 1;
   max-width: 12rem;
   line-height: 3rem;
   text-align: center;
+  transition: all 1s;
   font-family: "Neucha", cursive;
   font-size: 3rem;
   font-weight: 700;
 }
+@media screen and (max-width: 576px) {
+  header h1 {
+    top: 20%;
+    color: whitesmoke;
+    text-shadow: 0 0 20px #00000059;
+  }
+}
 header div:last-child {
-  margin-top: auto;
   padding: 3rem 2rem 2rem;
   border-radius: 5px;
   background: #ffffff3b;
@@ -577,6 +625,7 @@ header div:last-child {
   box-shadow: 0px 0px 10px 0px var(--shadow-black);
   transition: opacity 1s;
   opacity: 0;
+  margin-top: auto;
 }
 header div:last-child:hover {
   opacity: 1;

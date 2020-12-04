@@ -1,4 +1,4 @@
-ScrollReveal().reveal('header >*, section >*, footer >*', {
+ScrollReveal().reveal('section >*, footer >*', {
     delay: 10,
     duration: 1000,
     reset: true,
@@ -25,3 +25,7 @@ pepe.addEventListener('wheel',
             document.querySelector("header div:last-child").removeAttribute('style');
         }
     });
+
+// importo el modulo que maneja amburguesa
+import {burguerMenu} from './burguerMenu.mjs';
+burguerMenu();

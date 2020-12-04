@@ -28,8 +28,16 @@
 
 <body>
     <header class="header-actividades flex--direction-column">
+        
+        <!-- --- menu de amburuesa responsivo --- -->
+        <svg id='burguer-menu' class='' viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="15" rx="5"></rect>
+            <rect y="30" width="100" height="15" rx="5"></rect>
+            <rect y="60" width="100" height="15" rx="5"></rect>
+        </svg>
+
         <!-- nav principal -->
-        <nav>
+        <nav id="burguer-menu-target">
             <!-- hacer este contenedor
                  grid e ir variando template
                  o span de logo -->
@@ -287,7 +295,7 @@
         </ul>
         
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>
