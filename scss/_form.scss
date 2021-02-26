@@ -1,0 +1,51 @@
+/* FORMULARIO GENERAL */
+label {
+    /* predefinido son inline */
+    /* display: block; */
+}
+/* Pseudo clases */
+::placeholder{
+    font-style: italic;
+}
+// valido
+input[required]:invalid{
+background-color: rgb(252, 237, 237);
+}
+// invalido
+input[required]:valid{
+background-color: rgb(239, 255, 239);
+}
+// ----
+input,
+textarea,
+select {
+    /* predefinido son inline-block */
+    /* display: block; */
+    font-size: 1rem;
+
+    background-color: white;
+    padding: 0.5rem;
+    width: 100%;
+    resize: none;
+
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--color-link);
+}
+/* --- + personalizacion --- */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+input[type="range"] {
+    padding: inherit;
+}
+/* input[type=search]::after{
+    content : url("#");
+} */
+// icono?
+/* -------- */
+input[type="submit"],
+input[type="button"] {
+    border: none;
+}

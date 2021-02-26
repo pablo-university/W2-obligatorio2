@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+/* ----------- GLOBALES ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    list-style: none;
+    word-wrap: break-word;
+
+    // user-select: none;
+}
+:root {
+    /* colores */
+    --color-fondo: rgb(46 69 89 / 3%);
+    /*     --color-fondo--secundario: peachpuff;
+    --color-fondo--secundario: seashell; */
+    --color-fondo--secundario: lightslategray;
+    --color-fondo-card: white;
+    --color-fuente: rgb(70, 70, 70);
+
+    --color-link: #005656;
+    --color-link--hover: #003636;
+
+    --color-tabla: #1a486121;
+    --color-tabla--hover: #ffffff77;
+
+    /* margen */
+    --margen-fuente: 1rem;
+
+    /* sombras */
+    --shadow-black: 0 0 10px 0px #00000014;
+    --shadow-black--hover: 0 0 10px 0px #00000030;
+    --shadow-img: 0 0 20px 10px #0000001c;
+    --shadow-img--hover: 0 0 20px 10px #00000041;
+}
+/* --- SCROLL --- */
+/* Tamaño del scroll */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+body::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+/* Hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-link--hover);
+}
+/* --------- */
+/* IMG */
+img {
+    width: 100%;
+    object-fit: cover;
+    transition: filter 0.5s, box-shadow 0.5s;
+}
+figure img {
+    box-shadow: var(--shadow-img);
+    &:hover {
+        filter: hue-rotate(-30deg);
+        box-shadow: var(--shadow-img--hover);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+    color: var(--color-fuente);
+    margin-bottom: var(--margen-fuente);
+    /* transisiones de color en texto */
+    transition: color 0.5s;
+}
+/* conservan color pero no margen */
+li,
+i[class*="fa"],
+span[class*="material"] {
+    margin-bottom: 0;
+    color: var(--color-fuente);
+    transition: color 0.5s;
+} //-----------------------
+span[class^="material"] {
+    // clase de iconos no funciono
+    font-size: 1.2rem;
+} //-----------------------
+/* Hover links con iconos */
+a:hover > i[class*="fa"],
+a:hover > h1 {
+    color: var(--hover-link);
+}
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+/* Links */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+/* Hover Links */
+a:hover {
+    color: var(--color-link--hover);
+}
+/* Lineas */
+hr {
+    border: none;
+    border-bottom: 1px solid #00000017;
+    width: 80%;
+    margin: auto;
+}

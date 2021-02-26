@@ -1,0 +1,38 @@
+// BURGUER-MENU
+#burguer-menu{
+    overflow: visible;
+    rect{
+        transition: all 1s;
+    }
+    &.active{
+        rect:first-child {
+            transform: rotateZ(45deg) translateY(33px);
+            transform-origin: center;
+        }
+        rect:nth-child(2){
+            display:none;
+        }
+        rect:last-child {
+            transform: rotateZ(-45deg) translateY(-30px);
+            transform-origin: center;
+        }
+    }
+    @media screen and (min-width: 576px){
+        display:none;
+    }
+}
+#burguer-menu-target{
+    display: none;
+    transition: display 1s;
+    @media screen and (min-width: 576px){
+        display:block;
+    }
+}
+#burguer-menu-target.active{
+    display:block;
+    // si hay un hermano siguiente movete
+    & + *{
+        top: 50%;
+        margin-top: auto;
+    }
+}

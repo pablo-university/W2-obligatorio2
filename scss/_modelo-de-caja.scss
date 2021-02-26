@@ -1,0 +1,25 @@
+/* Modelo de caja¿? */
+@mixin modelo-de-caja($top: 4rem, $lados: min(10rem, 10vw), $bottom: 2rem) {
+    padding: $top $lados $bottom;
+}
+
+header,
+main > *,
+footer {
+    /* width: min(60rem, 100vw); */
+    // max-width: 1400px;
+    margin: auto;
+    background-color: var(--color-fondo);
+    // padding: 4rem min(10rem, 10vw) 2rem;
+    @include modelo-de-caja();
+}
+
+// excepciones
+.section2-index, .section1-actividades {
+    @include modelo-de-caja(4rem, 1vw, 2rem);
+}
+
+footer{
+    @include modelo-de-caja(0,0 ,2rem );
+    
+}

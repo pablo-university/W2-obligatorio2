@@ -1,0 +1,78 @@
+/* --- MENU --- */
+header nav {
+    // parto de esto
+    ul {
+        display: grid;
+        gap: 1rem;
+        place-items: center center;
+    }
+    // animaciones menu
+    li{
+        animation: flipInY 1.5s;
+    }
+    li:first-child:hover img{
+        animation: swing 1s;
+    }
+    // tamaño logo
+    img {
+        width: 3rem;
+        // Animación
+       
+    }
+    @media screen and (min-width: 576px) {
+        // elimino linea
+        hr {
+            display: none;
+        }
+        // acondiciono como se verá en adelante
+        ul {
+            grid-template-columns: repeat(6, 1fr);
+            justify-items: start;
+        }
+        li:first-child {
+            grid-column: 1/-1;
+        }
+    }
+    /*     @media screen and (min-width: 768px) {
+        
+    } */
+    @media screen and (min-width: 992px) {
+        li:first-child {
+            grid-column: span 3;
+        }
+    }
+    /*     @media screen and (min-width: 1200px) {
+    } */
+}
+// ---
+/* active */
+li.active {
+    pointer-events: none;
+}
+@keyframes active {
+    0% {
+        width: 0px;
+        margin: 0 0 0 0;
+    }
+    50% {
+        width: 100%;
+        margin: 0 0 0 0;
+    }
+    51% {
+        width: 100%;
+        margin: 0 0 0 auto;
+    }
+    100% {
+        width: 0%;
+        margin: 0 0 0 auto;
+    }
+}
+li.active::after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--color-link);
+    animation: active 2s ease-in-out 0s infinite;
+}

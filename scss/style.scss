@@ -1,0 +1,354 @@
+@use 'snippet';
+@use 'burguer-menu';
+@use 'globales';
+@use 'bibliotecas';
+@use 'form';
+@use 'table';
+@use 'modelo-de-caja';
+@use 'menu';
+//
+
+/* --- HEADER GENERAL --- */
+// header general
+header {
+    // MENU! esta en un modulo
+    min-height: 100vh;
+    background-color: sandybrown;
+    background-image: url(../img/portada.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* puse estas reglas asi ya que no me tomaba ni el shortland basico */
+
+    // H1 SALUDO AUSTRALIA
+    h1 {
+        position: absolute;
+        top: 38%;
+        align-self: center;
+        opacity: 1;
+        max-width: 12rem;
+        line-height: 3rem;
+        text-align: center;
+
+        transition: all 1s;
+
+        font-family: "Neucha", cursive;
+        font-size: 3rem;
+        font-weight: 700;
+        @media screen and (max-width: 576px) {
+            top: 20%;
+            color: whitesmoke;
+            text-shadow: 0 0 20px #00000059;
+        }
+    }
+
+    // bottom general?
+    div:last-child {
+        // header es flexible
+        // margin-top: auto; si se quiere poner debajo se usa esto
+        padding: 3rem 2rem 2rem;
+        border-radius: 5px;
+        background: #ffffff3b;
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 0px 10px 0px var(--shadow-black);
+
+        transition: opacity 1s;
+        opacity: 0;
+        margin-top: auto;
+        &:hover {
+            opacity: 1;
+        }
+        // -------------
+        .boton {
+            margin-left: auto;
+        }
+    }
+}
+// HEADER-INDEX
+.header-index {
+    ul li:first-child a {
+        pointer-events: none;
+    }
+    // oculto texto
+    p {
+        display: none;
+    }
+    // muestro texto
+    @media screen and (min-width: 576px) {
+        p {
+            display: block;
+            columns: 15rem 2;
+        }
+    }
+}
+// HEADER-ACTIVIDADES
+.header-actividades {
+    padding-bottom: 0;
+    // oculto tabla
+    table {
+        display: none;
+    }
+    .boton {
+        align-self: flex-end;
+    }
+    div:last-child {
+        opacity: 1;
+    }
+    // muestro tabla & oculto columna
+    @media screen and (min-width: 768px) {
+        table {
+            display: table;
+        }
+        th:last-child,
+        td:last-child {
+            display: none;
+        }
+    }
+    // muestro columna faltante
+    @media screen and (min-width: 992px) {
+        th:last-child,
+        td:last-child {
+            display: table-cell;
+        }
+    }
+}
+
+/* --- MAIN INDEX --- */
+.section1-index {
+    background-color: lightslategrey;
+    form > div {
+        display: none;
+    }
+    @media screen and (min-width: 768px) {
+        form > div {
+            display: inherit;
+        }
+        form input[type="submit"]:last-child {
+            place-self: end end;
+        }
+    }
+}
+
+.section2-index {
+    background: lightslategray;
+    // imagenes de esta seccion
+    img {
+        height: 100%;
+    }
+    // ----------- Absoluto figcaption hoverlay
+    // al final cambie esto lo deje con flex
+    figure {
+        position: relative;
+        overflow: hidden;
+        figcaption {
+            color: whitesmoke;
+            position: absolute;
+            bottom: 0;
+            opacity: 0;
+            text-align: center;
+            width: 100%;
+            height: 0%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.5s;
+            h3 {
+                color: #ffffffd8;
+            }
+        }
+        &:hover figcaption {
+            // ponerlo abajo chiquito y que crezca
+            height: 100%;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.315);
+        }
+    }
+    // ---------------------------
+    // oculto parrafos de articulos
+    article div {
+        display: none;
+    }
+    // pongo botones debajo a la derecha
+    a {
+        width: 10rem;
+        margin: auto 0 0 auto;
+    }
+    // muestro parrafos de articulos
+    // & doy ancho de modulos a los div segun br
+    @media screen and (min-width: 768px) {
+        article div {
+            display: inherit;
+        }
+        article:nth-child(1n) div {
+            //todos los article
+            flex: 0;
+        }
+    }
+    // doy ancho de modulos a los div segun br
+    @media screen and (min-width: 992px) {
+        article:nth-child(1n) div {
+            //todos los article
+            flex: 1 15rem;
+        }
+    }
+    // doy ancho de modulos a los div segun br
+    @media screen and (min-width: 1200px) {
+        article:nth-child(1n) div {
+            //todos los article
+            flex: 0;
+        }
+    }
+}
+
+.section3-index {
+    // oculto ultimo articulo, p y ul
+    article:last-child,
+    article p,
+    article ul {
+        display: none;
+    }
+    article div:last-child {
+        /* como es hijo flexible le digo que vaya hasta
+         abajo(xra mantener cards alineadas) */
+        margin-top: auto;
+    }
+    article .boton {
+        margin-left: auto;
+    }
+    // h3 y boton esten juntos (anulo mi grilla, se puede mejorar esto)
+    @media screen and (max-width: 575px) {
+        article h3 {
+            grid-column: span 1;
+        }
+    }
+    // muestro ul
+    @media screen and (min-width: 576px) {
+        article ul {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    }
+    // muestro p
+    @media screen and (min-width: 768px) {
+        article p {
+            display: block;
+        }
+    }
+    // ultimo articulo visible(flex tmbn xra mantener cards alineadas)
+    @media screen and (min-width: 992px) {
+        article:last-child {
+            display: flex;
+        }
+    }
+}
+// ---------
+
+/* --- MAIN ACTIVIDADES --- */
+.section1-actividades {
+    background-color: lightslategray;
+    img {
+        height: 100%;
+    }
+    // posicion de boton
+    .boton {
+        margin: auto 0 0 auto;
+    }
+    & > div {
+        margin-bottom: 4rem;
+    }
+    // ------------------
+    // oculto todo menos h3
+    article > div :not(h3) {
+        display: none;
+    }
+    // @FIGURE
+    figure {
+        flex-basis: 100%;
+    }
+    // @DIV
+    // anulo mi biblioteca (flex--direction-culum)
+    article div {
+        // flex: 1;
+        gap: 0;
+    }
+    // muestro todo menos p
+    @media screen and (min-width: 576px) {
+        article > div :not(p) {
+            display: block;
+            li {
+                display: inline-flex;
+            }
+        }
+        figure {
+            flex: 2 15rem;
+        }
+    }
+    // muestro p
+    @media screen and (min-width: 768px) {
+        article > div > p {
+            display: block;
+        }
+    }
+} // fin section1-actividades
+
+.section2-actividades {
+    // oculto texto
+    article p {
+        display: none;
+    }
+    & > div > * {
+        flex: 0 40%;
+    }
+    // cambio modulos flex
+    @media screen and (min-width: 576px) {
+        & > div > * {
+            flex: 0 30%;
+        }
+    }
+    // muestro texto
+    @media screen and (min-width: 992px) {
+        article p {
+            display: block;
+        }
+    }
+    // cambio modulos flex
+    @media screen and (min-width: 1200px) {
+        & > div > * {
+            flex: 1;
+        }
+    }
+}
+
+.section3-actividades {
+    background-color: var(--color-fondo--secundario);
+
+    iframe {
+        min-height: 45vh;
+        width: 100%;
+        border: none;
+    }
+    & > div > * {
+        flex: 1 30rem;
+    }
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: sandybrown;
+    // background-color: lightblue;
+
+    iframe {
+        width: 100%;
+        max-height: 50vh;
+        border: none;
+        mix-blend-mode: luminosity;
+    }
+
+    // mato de mi _bibliotecas
+    ul {
+        @include modelo-de-caja.modelo-de-caja(2rem, 0, 1rem);
+        flex-wrap: nowrap;
+    }
+}
