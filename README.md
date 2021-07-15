@@ -1,4 +1,2 @@
 # W2-obligatorio2
-_Academic web page_
-## Descripción
-_Se plantea la integración de una página web, relacionada a temática de turismo del exterior. Por lo que en primer instancia el objetivo es hacer uso de herramientras incorporadas durante el curso._
+_Se trata de un sitio web de información turística, de información general sobre australia tanto como a detalle, mostrar imágenes conceptos vertidos y bibliotecas usadas para la realización del sitio web_
